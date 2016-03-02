@@ -36,17 +36,30 @@
     var LINE_HEIGHT = _canvas.height / 15;
     var START_X = 0.5 - _mousePos.x;
     var mouseYPerc = _mousePos.y / window.innerHeight;
-    var xPos = START_X;
+    var xPos = 0.5;
     var yPos = 0;
     var strokeWidth = 1;
-    var gapWidth = 16 + (mouseYPerc * 8);
+    var gapWidth = 16;// + (mouseYPerc * 8);
     var offsetStart = 0.5;
     var isOffset = false;
 
     _ctx.clearRect(0, 0, _canvas.width, _canvas.height);
 
+
     for (var j = 0, rowLength = 15; j < rowLength; j++) {
+      _ctx.strokeStyle = 'rgb(0, 0, 0)';
       _ctx.lineWidth = strokeWidth;
+
+      // determine if the current row is active
+      var isRowActive = false;
+      var topOfRow = 260 + (LINE_HEIGHT * j);
+      var bottomOfRow = topOfRow + LINE_HEIGHT;
+
+      if (_mousePos.y > topOfRow && _mousePos.y < bottomOfRow) {
+        // _ctx.strokeStyle = 'rgb(55, 70, 200)';
+        // isRowActive = true;
+        xPos = START_X;
+      }
 
       for (var i = 0, lineLength = 500; i < lineLength; i++) {
         _ctx.beginPath();
@@ -66,7 +79,7 @@
 
       strokeWidth += .5;
       // gapWidth -= .5;
-      xPos = (isOffset) ? (gapWidth / 2) + START_X : START_X;
+      xPos = (isOffset) ? (gapWidth / 2) + 0.5 : 0.5;
       yPos += LINE_HEIGHT;
       offsetStart = xPos;
 
@@ -89,11 +102,10 @@
     // _mousePos.prevX = _mousePos.x;
     // _mousePos.prevY = _mousePos.y;
     // _mousePos.x = e.x;
-    // _mousePos.y = e.y;
+    _mousePos.y = e.y;
 
-    TweenLite.to(_mousePos, 2, {
+    TweenLite.to(_mousePos, .6, {
       x: e.x,
-      y: e.y,
       ease: Quad.easeOut,
       onUpdate: draw
     });
