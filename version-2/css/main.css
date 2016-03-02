@@ -168,7 +168,7 @@ main {
 .night .info__email,
 .night .info__phone,
 .night .info__social,
-.night .info__social a {
+.night a {
   color: #999999;
 }
 
