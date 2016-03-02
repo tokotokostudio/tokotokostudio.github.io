@@ -67,7 +67,7 @@
       var currentHour = new Date().getHours();
       if (currentHour > 12 && currentHour < 18) {
         document.body.className = 'midday';
-      } else if (currentHour >= 18) {
+      } else if (currentHour >= 18 || currentHour < 5) {
         document.body.className = 'night';
       }
     </script>
