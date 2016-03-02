@@ -2,6 +2,7 @@
 
   var _instance = {};
 
+  var _colContainer;
   var _canvas;
   var _ctx;
   var _prevRowNum = -1;
@@ -12,6 +13,8 @@
   };
 
   _instance.init = function() {
+    _colContainer = document.querySelector('.col-container');
+
     addListeners();
     buildCanvas();
     buildRows();
@@ -25,7 +28,6 @@
   function buildCanvas() {
     _canvas = document.getElementById('pattern');
     _canvas.style.position = 'absolute';
-    _canvas.style.top = 260 + 'px';
     _canvas.style.left = 20 + 'px';
 
     _ctx = _canvas.getContext('2d');
@@ -45,7 +47,6 @@
       _rowPos[row].posX = (j % 2 == 1) ? (gapWidth / 2) + 0.5 : 0.5;
       _rowPos[row].posX += window.innerWidth;
       _rowPos[row].startX = 0;
-      // _rowPos[row] += window.innerWidth / 2;
     }
   }
 
@@ -87,7 +88,9 @@
   }
 
   function render(reqIndex) {
-    draw();
+    if (window.innerWidth > 600) {
+      draw();
+    }
 
     requestAnimationFrame(render);
   }
@@ -153,8 +156,10 @@
   }
 
   function handleResize(e) {
+    _canvas.style.top = _colContainer.clientHeight + 15 + 'px';
+
     _canvas.width = window.innerWidth - 40;
-    _canvas.height = window.innerHeight - 295;
+    _canvas.height = window.innerHeight - _colContainer.clientHeight - 35 - 15;
 
     draw();
   }
