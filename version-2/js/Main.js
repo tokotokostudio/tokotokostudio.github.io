@@ -114,7 +114,6 @@
     }
 
     var destinPos = rowObj.posX + (_mousePos.x - rowObj.startX);
-    console.log(destinPos)
 
     if (destinPos < 0) {
       destinPos = _canvas.width;
