@@ -132,8 +132,15 @@ main {
   font-family: 'FoundersGroteskMedium';
 }
 
+#pattern {
+  display: none;
+}
 
 @media all and (min-width: 910px) {
+  #pattern {
+    display: block;
+  }
+
   .header__headline {
     margin-left: 340px;
   }
