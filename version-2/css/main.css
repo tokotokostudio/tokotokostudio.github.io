@@ -61,6 +61,14 @@ main {
   background-color: #eaeaeb;
 }
 
+.logo--black {
+
+}
+
+.logo--white {
+  display: none;
+}
+
 .header {
   position: absolute;
   z-index: 1;
@@ -142,6 +150,42 @@ main {
   color: #000;
   font-size: 12px;
   font-family: 'FoundersGroteskMedium';
+}
+
+.morning {
+
+}
+
+.midday main {
+  background-color: #bbbbbd;
+}
+
+.midday .info__description {
+  color: #fff;
+}
+
+.night main {
+  background-color: #1f1f24;
+}
+
+.night .info__description {
+  color: #fff;
+}
+
+.night .logo--black {
+  display: none;
+}
+
+.night .logo--white {
+  display: block;
+}
+
+
+.night .info__email,
+.night .info__phone,
+.night .info__social,
+.night .info__social a {
+  color: #999999;
 }
 
 @media all and (min-width: 910px) {
