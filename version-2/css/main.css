@@ -111,18 +111,6 @@ main {
   padding: 50px 20px 0;
 }
 
-.col-1 {
-
-}
-
-.col-2 {
-
-}
-
-.info {
-
-}
-
 .info__description {
   padding-bottom: 40px;
   font-size: 17px;
@@ -150,10 +138,6 @@ main {
   color: #000;
   font-size: 12px;
   font-family: 'FoundersGroteskMedium';
-}
-
-.morning {
-
 }
 
 .midday main {
