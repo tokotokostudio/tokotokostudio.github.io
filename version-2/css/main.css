@@ -96,7 +96,7 @@ main {
 }
 
 .col-2 {
-  position: relative;
+  
 }
 
 .info {
@@ -168,8 +168,9 @@ main {
     display: inline-block;
     position: absolute;
     margin-top: 4px;
-    left: 340px;
-    width: 220px;
+    width: 230px;
+    text-align: right;
+    right: 20px;
   }
 
   .footer {
@@ -178,11 +179,5 @@ main {
 
   .footer__location {
     margin-left: 340px;
-  }
-}
-
-@media all and (min-width: 1355px) {
-  .info__social {
-    left: 790px;
   }
 }
