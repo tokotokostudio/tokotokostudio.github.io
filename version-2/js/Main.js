@@ -121,7 +121,7 @@
     //   onUpdate: draw
     // });
 
-    TweenLite.to(_rowPos, 1, {
+    TweenLite.to(_rowPos, 2, {
       ['r' + currentRow]: _mousePos.x,
       ease: Quad.easeOut
     });
