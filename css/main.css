@@ -170,7 +170,7 @@ main {
 .night .info__phone,
 .night .info__social,
 .night a {
-  color: #999999;
+  color: #fff;
 }
 
 @media all and (min-width: 910px) {
