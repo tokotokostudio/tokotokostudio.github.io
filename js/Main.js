@@ -2,6 +2,7 @@
 
   var _instance = {};
 
+  var _numOfRows;
   var _colContainer;
   var _canvas;
   var _ctx;
@@ -51,7 +52,7 @@
   }
 
   function draw() {
-    var LINE_HEIGHT = _canvas.height / 15;
+    var LINE_HEIGHT = _canvas.height / _numOfRows;
     var xPos;
     var yPos = 0;
     var strokeWidth = 1.5;
@@ -61,7 +62,7 @@
     _ctx.clearRect(0, 0, _canvas.width, _canvas.height);
     _ctx.strokeStyle = 'rgb(0, 0, 0)';
 
-    for (var j = 0, rowLength = 15; j < rowLength; j++) {
+    for (var j = 0; j < _numOfRows; j++) {
       xPos = -_rowPos['r' + j].posX;
 
       _ctx.lineWidth = strokeWidth;
@@ -139,12 +140,12 @@
   }
 
   function getCurrentRow() {
-    var LINE_HEIGHT = _canvas.height / 15;
+    var LINE_HEIGHT = _canvas.height / _numOfRows;
 
-    for (var j = 0, rowLength = 15; j < rowLength; j++) {
+    for (var j = 0; j < _numOfRows; j++) {
       // determine if the current row is active
       var isRowActive = false;
-      var topOfRow = 260 + (LINE_HEIGHT * j);
+      var topOfRow = _colContainer.clientHeight + 15 + (LINE_HEIGHT * j);
       var bottomOfRow = topOfRow + LINE_HEIGHT;
 
       if (_mousePos.y > topOfRow && _mousePos.y < bottomOfRow) {
@@ -160,6 +161,16 @@
 
     _canvas.width = window.innerWidth - 40;
     _canvas.height = window.innerHeight - _colContainer.clientHeight - 35 - 15;
+
+    if (window.innerHeight > 780) {
+      _numOfRows = 15;
+    } else if (window.innerHeight > 700) {
+      _numOfRows = 12;
+    } else if (window.innerHeight > 600) {
+      _numOfRows = 10;
+    } else {
+      _numOfRows = 8;
+    }
 
     draw();
   }
