@@ -1,3 +1,8 @@
+<?php
+  $logoList = ['01_tokotoko_logo-', '02_tokotoko_logo-', '03_tokotoko_logo-', '04_tokotoko_logo-'];
+  $logoName = $logoList[rand(0, 3)];
+?>
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -46,8 +51,10 @@
     <main>
       <div class="col-container clearfix">
         <div class="col-1">
-          <img class="logo--black" src="images/tokotoko_logo@2x.png" alt="TOKOTOKO" width="117" height="14" />
-          <img class="logo--white" src="images/tokotoko_logo-white@2x.png" alt="TOKOTOKO white" width="117" height="14" />
+          <img class="logo--black--desktop" src="images/<?php echo $logoName; ?>black@2x.png" alt="TOKOTOKO" width="115" height="61" />
+          <img class="logo--white--desktop" src="images/<?php echo $logoName; ?>white@2x.png" alt="TOKOTOKO white" width="115" height="61" />
+          <img class="logo--black--mobile logo--mobile" src="images/mobile-tokotoko_logo-black@2x.png" alt="TOKOTOKO" width="117" height="14" />
+          <img class="logo--white--mobile logo--mobile" src="images/mobile-tokotoko_logo-white@2x.png" alt="TOKOTOKO white" width="117" height="14" />
         </div>
         <div class="col-2 info">
           <p class="info__description">We are the Design Director duo of internationally recognized and awarded designers <a href="https://www.linkedin.com/in/sebastiangram" target="blank">Sebastian Gram</a> &amp; <a href="https://dk.linkedin.com/in/mathiashnormark" target="blank">Mathias Høst Normark</a>. Our vision is to collaborate with brands in building the next generation of digital brands trough digital identities, experiences & platforms.</p>
