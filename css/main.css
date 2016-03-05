@@ -61,11 +61,19 @@ main {
   background-color: #eaeaeb;
 }
 
-.logo--black {
+.logo--black--desktop {
+  display: none;
+}
+
+.logo--white--desktop {
+  display: none;
+}
+
+.logo--black--mobile {
 
 }
 
-.logo--white {
+.logo--white--mobile {
   display: none;
 }
 
@@ -104,7 +112,6 @@ main {
   right: 20px;
   top: 9px;
 }
-
 
 .col-container {
   width: 100%;
@@ -157,14 +164,13 @@ main {
   color: #fff;
 }
 
-.night .logo--black {
+.night .logo--black--mobile {
   display: none;
 }
 
-.night .logo--white {
+.night .logo--white--mobile {
   display: block;
 }
-
 
 .night .info__email,
 .night .info__phone,
@@ -174,6 +180,22 @@ main {
 }
 
 @media all and (min-width: 910px) {
+  .logo--mobile {
+    display: none !important;
+  }
+
+  .logo--black--desktop {
+    display: block;
+  }
+
+  .night .logo--black--desktop {
+    display: none;
+  }
+
+  .night .logo--white--desktop {
+    display: block;
+  }
+
   .header__headline {
     margin-left: 340px;
   }
